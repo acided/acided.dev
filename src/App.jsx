@@ -10,7 +10,7 @@ const SKILLS = {
 
 const CONTACT = [
   { label: 'GitHub', href: 'https://github.com/acided', icon: 'gh' },
-  { label: 'Telegram', href: 'https://t.me/acided1', icon: 'tg' },
+  { label: 'Telegram', href: 'https://t.me/acided_dev', icon: 'tg' },
   { label: 'Email', href: 'mailto:acided.dev@gmail.com', icon: 'email' },
 ]
 
@@ -424,7 +424,7 @@ export default function App() {
 
       <footer className="footer">
         <span style={{ fontFamily: 'var(--mono)', fontSize: 11, color: 'var(--text3)' }}>
-          © 2025 Bogdan Kochkurov — acided.dev
+          © 2026 Bogdan Kochkurov — acided.dev
         </span>
       </footer>
     </div>
