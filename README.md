@@ -61,5 +61,5 @@ CI/CD via GitHub Actions — every push to `main` builds and rsyncs `dist/` to t
 ---
 
 <div align="center">
-<sub>Built with React · Deployed on a VPS in Kyrgyzstan 🇰🇬</sub>
+<sub>Built with React · Deployed on a VPS in Sweden 🇸🇪</sub>
 </div>
