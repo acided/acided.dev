@@ -1,0 +1,338 @@
+.app {
+  position: relative;
+  min-height: 100vh;
+  z-index: 1;
+  overflow-x: hidden;
+}
+
+/* HERO */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 3rem;
+  overflow: visible;
+  will-change: transform, opacity;
+}
+
+.hero-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+  z-index: 1;
+}
+
+.hero-name {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.0;
+  margin: 0.5rem 0;
+}
+
+.name-first {
+  font-size: clamp(56px, 10vw, 110px);
+  font-weight: 300;
+  letter-spacing: -0.03em;
+  color: var(--text2);
+  animation: fadeUp 0.8s ease both;
+}
+
+.name-last {
+  font-size: clamp(56px, 10vw, 110px);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  padding-right: 0.06em;
+  color: var(--text);
+  background: linear-gradient(135deg, #e8edf5 0%, #a78bfa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: fadeUp 0.8s 0.1s ease both;
+}
+
+.hero-role {
+  font-family: var(--mono);
+  font-size: clamp(13px, 2vw, 16px);
+  color: var(--accent);
+  letter-spacing: 0.06em;
+  height: 1.5em;
+  animation: fadeUp 0.8s 0.2s ease both;
+}
+
+.cursor {
+  animation: blink 1s step-end infinite;
+  color: var(--accent);
+}
+
+.hero-line {
+  width: 60px;
+  height: 1px;
+  background: var(--border2);
+  animation: fadeUp 0.8s 0.3s ease both;
+}
+
+.hero-sub {
+  font-size: 14px;
+  color: var(--text3);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  animation: fadeUp 0.8s 0.35s ease both;
+}
+
+.scroll-hint {
+  position: absolute;
+  bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  opacity: 0.4;
+  animation: fadeUp 1s 1s ease both;
+}
+
+.scroll-mouse {
+  width: 22px;
+  height: 34px;
+  border: 1px solid var(--border2);
+  border-radius: 11px;
+  display: flex;
+  justify-content: center;
+  padding-top: 6px;
+}
+
+.scroll-wheel {
+  width: 2px;
+  height: 6px;
+  background: var(--text3);
+  border-radius: 1px;
+  animation: scrollWheel 2s ease infinite;
+}
+
+/* SECTIONS */
+.section {
+  position: relative;
+  z-index: 1;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 6rem 2rem;
+}
+
+.section-label {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 2.5rem;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.section-label::before {
+  content: '';
+  display: block;
+  width: 30px;
+  height: 1px;
+  background: var(--accent);
+  opacity: 0.5;
+}
+
+/* SKILLS */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.skill-card {
+  background: var(--bg2);
+  padding: 2rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s var(--delay, 0ms) ease, transform 0.5s var(--delay, 0ms) ease, background 0.2s;
+}
+
+.skill-card:hover {
+  background: var(--surface);
+}
+
+.skill-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.skill-cat {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text3);
+  margin-bottom: 1rem;
+  font-family: var(--mono);
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tag {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text2);
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 4px 10px;
+  transition: all 0.2s;
+  cursor: default;
+}
+
+.tag-hover {
+  color: var(--accent);
+  border-color: rgba(79,142,247,0.3);
+  background: var(--accent-dim);
+  transform: translateY(-1px);
+}
+
+/* CONTACT */
+.contact-section {
+  padding-bottom: 3rem;
+}
+
+.contact-title {
+  font-size: clamp(32px, 5vw, 56px);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  margin-bottom: 3rem;
+  color: var(--text2);
+}
+
+.contact-title-accent {
+  color: var(--text);
+}
+
+.contact-cards {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.contact-card {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 1rem 1.5rem;
+  background: var(--surface);
+  border: 1px solid var(--border2);
+  border-radius: 12px;
+  transition: all 0.25s;
+  color: var(--text2);
+}
+
+.contact-hovered {
+  background: var(--surface2);
+  border-color: rgba(79,142,247,0.35);
+  color: var(--text);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(79,142,247,0.12);
+}
+
+.contact-icon {
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+}
+
+.contact-label {
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.contact-arrow {
+  margin-left: auto;
+  font-size: 14px;
+  opacity: 0.4;
+  transition: all 0.2s;
+}
+
+.contact-hovered .contact-arrow {
+  opacity: 1;
+  color: var(--accent);
+  transform: translate(2px, -2px);
+}
+
+/* PARTICLES */
+.particle {
+  position: absolute;
+  background: var(--accent);
+  border-radius: 50%;
+  animation: float linear infinite;
+}
+
+/* STATUS DOT */
+.dot-pulse {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background: var(--green);
+  border-radius: 50%;
+  position: relative;
+}
+
+.dot-pulse::before {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  border: 1px solid var(--green);
+  animation: pulse 2s ease infinite;
+}
+
+/* FOOTER */
+.footer {
+  text-align: center;
+  padding: 3rem 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* KEYFRAMES */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes scrollWheel {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(10px); opacity: 0; }
+}
+
+@keyframes float {
+  0% { transform: translateY(0) scale(1); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 0.3; }
+  100% { transform: translateY(-80px) scale(0.5); opacity: 0; }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 0.8; }
+  100% { transform: scale(2.5); opacity: 0; }
+}
